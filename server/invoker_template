@@ -1,0 +1,5 @@
+from main import {name}
+
+def invoke(params):
+    return {name}(params)
+    
