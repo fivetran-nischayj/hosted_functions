@@ -22,6 +22,7 @@ def initialise():
 
     import startup
     startup.fetch_files(github_token, repo, path)
+    startup.download_deps()
     startup.init_files(entry)
     return {
         'message': 'Initialised files successfully'

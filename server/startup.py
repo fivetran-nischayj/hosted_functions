@@ -24,6 +24,7 @@ def fetch_files(token, repo, path):
         print(f"Failed to fetch files. Status Code: {response.status_code}")
 
 def download_deps():
+    import subprocess
     try:
         subprocess.run(["pip3", "install", "-r", "requirements.txt"], check=True)
         print("Dependencies downloaded successfully.")
