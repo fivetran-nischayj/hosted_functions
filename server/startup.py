@@ -23,9 +23,19 @@ def fetch_files(token, repo, path):
     else:
         print(f"Failed to fetch files. Status Code: {response.status_code}")
 
+def download_deps():
+    try:
+        subprocess.run(["pip3", "install", "-r", "requirements.txt"], check=True)
+        print("Dependencies downloaded successfully.")
+    except subprocess.CalledProcessError as e:
+        print(f"Error downloading dependencies: {e}")
+
+        
+
 def init_files(entry):
     with open('invoker_template', 'r') as fr:
         code = fr.read()
         with open('invoker.py', 'w') as fw:
             fw.write(code.format(name=entry))
     print('Initialised all files successfully')
+    
