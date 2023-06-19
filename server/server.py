@@ -29,16 +29,11 @@ def initialise():
 
 @app.route('/data', methods=['POST'])
 def get_data():
-    # Call the handle method inside function.py with the request body params
-    # Assumes that the handle method is defined in the function.py file
+   
+    params = request.json 
 
-    # Extract params from the request body
-    params = request.json  # Assuming the request body is in JSON format
-
-    # Import the handler method from the function.py file
     from invoker import invoke
 
-    # Call the handle method and pass the params
     result = invoke(params)
 
     return result
